@@ -5,7 +5,7 @@ session_start();
 
 // Register User: Passwords must match and be strong, username cannot be in use.
 
-$username = $_POST['username'];
+$username = strtolower($_POST['username']);
 $pw1 = $_POST['pw1'];
 $pw2 = $_POST['pw2'];
 
