@@ -1,6 +1,6 @@
 
 <?php
-$mysqli = new mysqli('localhost', 'wustl_inst', 'wustl_pass', 'StoryDB');
+$mysqli = new mysqli('localhost', 'YOUR_USERNAME', 'YOUR_PASSWORD', 'DATABASE_NAME');
 
 if($mysqli->connect_errno) {
     echo "Connection Failed.";
