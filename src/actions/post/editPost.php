@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // First make sure this user owns the post
    // Verify ownership
     $stmt = $mysqli->prepare("
-        SELECT users.username 
+        SELECT Users.username 
         FROM posts 
-        JOIN users ON posts.UserID = users.UserID 
-        WHERE posts.PostID = ?
+        JOIN Users ON Posts.UserID = Users.UserID 
+        WHERE Posts.PostID = ?
     ");
 
     $stmt->bind_param("i", $postID);
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Update post
-    $stmt = $mysqli->prepare("UPDATE posts SET title = ?, body = ?, link = ? WHERE PostID = ?");
+    $stmt = $mysqli->prepare("UPDATE Posts SET title = ?, body = ?, link = ? WHERE PostID = ?");
     $stmt->bind_param("sssi", $newTitle, $newContent, $newLink, $postID);
 
     if ($stmt->execute()) {

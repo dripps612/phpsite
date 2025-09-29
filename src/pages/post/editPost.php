@@ -16,7 +16,7 @@ $postID = intval($_GET['postID']);
 $username = $_SESSION['username'];
 
 // Find logged in userID
-$stmt = $mysqli->prepare("SELECT userID FROM users WHERE username = ?");
+$stmt = $mysqli->prepare("SELECT userID FROM Users WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -27,7 +27,7 @@ $userRow = $result->fetch_assoc();
 $userID = $userRow['userID'];
 
 // Fetch post
-$stmt = $mysqli->prepare("SELECT userID, title, body, link FROM posts WHERE postID = ?");
+$stmt = $mysqli->prepare("SELECT userID, title, body, link FROM Posts WHERE postID = ?");
 $stmt->bind_param("i", $postID);
 $stmt->execute();
 $postResult = $stmt->get_result();
