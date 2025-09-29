@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+    Future Improvements:
+        - Create a Session variable of USER ID to be used everywhere instead of querying db every time.
+        - Separate CSS files
+        - create a cache
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Story page</title>
+</head>
+<body>
+    <h1>Welcome to Story Sharing page!</h1>
+    <h5>Log in or Register to comment, post, and see other users!</h5>
+	<br>
+    <form method="POST" action="pages/auth/loginPage.html"> 
+	<input type="submit" class="submit" value="Log in">
+	</form>
+
+    <form method="POST" action="pages/auth/registerPage.html"> 
+	<input type="submit" class="submit" value = "Register">
+	</form>
+
+    <form method="POST" action="pages/post/viewPosts.php"> 
+	<input type="submit" class="submit" value= "Just See Posts">
+	</form>
+    
+    
+</body>
+</html>
